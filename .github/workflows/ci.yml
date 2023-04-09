@@ -39,9 +39,13 @@ jobs:
       - name: Go to dist directory
         run: cd ./dist
 
-      - uses: EndBug/add-and-commit@v9
-        with:
-          new_branch: dist
-          message: "[${{ steps.time.outputs.formattedTime }}] update pac files"
-          author_name: "github-actions[bot]"
-          author_email: "github-actions[bot]@users.noreply.github.com"
+      - name: Git Auto Commit
+        run: |
+          git init
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git checkout --orphan dist
+          git add --all
+          git commit --allow-empty -m "[${{ steps.time.outputs.formattedTime }}] update pac files" --no-verify --author="${GITHUB_ACTOR} <${GITHUB_ACTOR}@users.noreply.github.com>"
+          git push origin dist --force
