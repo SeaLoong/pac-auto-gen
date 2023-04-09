@@ -2,7 +2,7 @@
 
 使用 GitHub Actions 每周生成 PAC
 
-![CI](https://img.shields.io/github/actions/workflow/status/sealoong/pac-auto-gen/ci.yml?label=CI&logo=github-actions&logoColor=white&style=for-the-badge)
+[![CI](https://img.shields.io/github/actions/workflow/status/sealoong/pac-auto-gen/ci.yml?label=CI&logo=github-actions&logoColor=white&style=for-the-badge)](https://github.com/SeaLoong/pac-auto-gen/actions/workflows/ci.yml)
 
 ## 说明
 
