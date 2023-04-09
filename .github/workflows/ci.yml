@@ -23,6 +23,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install genpac
 
+      - run: mkdir ./dist
+
       - name: Run genpac for Clash
         run: genpac --format=pac --user-rule-from=rules.txt --pac-proxy="$(cat ./clash.txt)" > ./dist/pac-clash.txt
 
@@ -34,9 +36,7 @@ jobs:
         with:
           format: yyyy-MM-DD
 
-      - run: |
-          mkdir ./dist
-          cd ./dist
+      - run: cd ./dist
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:

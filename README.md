@@ -12,7 +12,9 @@
 
 ## 下载
 
-<a href="https://raw.githubusercontent.com/SeaLoong/pac-auto-gen/master/pac.txt" download>pac.txt</a>
+<a href="https://raw.githubusercontent.com/SeaLoong/pac-auto-gen/dist/pac-clash.txt" download>pac-clash.txt</a>
+
+<a href="https://raw.githubusercontent.com/SeaLoong/pac-auto-gen/dist/pac-ssr.txt" download>pac-ssr.txt</a>
 
 ## 感谢
 
