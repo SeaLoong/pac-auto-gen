@@ -7,7 +7,6 @@ on:
     branches:
       - master
 
-
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -16,14 +15,15 @@ jobs:
 
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: "3.9"
 
       - name: Setup genpac
         run: |
           python -m pip install --upgrade pip
           pip install genpac
 
-      - run: mkdir ./dist
+      - name: Create dist directory
+        run: mkdir ./dist
 
       - name: Run genpac for Clash
         run: genpac --format=pac --user-rule-from=rules.txt --pac-proxy="$(cat ./clash.txt)" > ./dist/pac-clash.txt
@@ -36,13 +36,12 @@ jobs:
         with:
           format: yyyy-MM-DD
 
-      - run: cd ./dist
+      - name: Go to dist directory
+        run: cd ./dist
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: EndBug/add-and-commit@v9
         with:
-          commit_message: '[${{ steps.time.outputs.formattedTime }}] update pac files'
-          branch: dist
-          add_options: '--all'
-          push_options: '--force'
-          skip_dirty_check: true    
-          create_branch: true
+          new_branch: dist
+          message: "[${{ steps.time.outputs.formattedTime }}] update pac files"
+          author_name: "github-actions[bot]"
+          author_email: "github-actions[bot]@users.noreply.github.com"
