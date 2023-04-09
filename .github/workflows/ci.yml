@@ -6,35 +6,43 @@ on:
   push:
     branches:
       - master
-    paths:
-      - '.github/workflows/*.yml'
-      - 'rules.txt'
-  pull_request:
-  workflow_dispatch:
+
 
 jobs:
   main:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4.5.0
+      - uses: actions/setup-python@v4
         with:
-          python-version: "3.9.7"
+          python-version: '3.9'
 
-      - run: python -m pip install --upgrade pip
-      - run: pip install genpac
-      - run: genpac --format pac --user-rule-from ./rules.txt --pac-proxy "SOCKS5 127.0.0.1:1080" > ./pac.txt
+      - name: Setup genpac
+        run: |
+          python -m pip install --upgrade pip
+          pip install genpac
 
-      - uses: josStorer/get-current-time@v2.1.1
+      - name: Run genpac for Clash
+        run: genpac --format=pac --user-rule-from=rules.txt --pac-proxy="$(cat ./clash.txt)" > ./dist/pac-clash.txt
+
+      - name: Run genpac for SSR
+        run: genpac --format=pac --user-rule-from=rules.txt --pac-proxy="$(cat ./ssr.txt)" > ./dist/pac-ssr.txt
+
+      - uses: josStorer/get-current-time@v2
         id: time
         with:
           format: yyyy-MM-DD
 
-      - uses: EndBug/add-and-commit@v9.1.1
-        if: github.event_name != 'pull_request'
+      - run: |
+          mkdir ./dist
+          cd ./dist
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          message: "chore: ${{ steps.time.outputs.formattedTime }} update pac.txt"
-          add: pac.txt
-          author_name: "github-actions[bot]"
-          author_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: '[${{ steps.time.outputs.formattedTime }}] update pac files'
+          branch: dist
+          add_options: '--all'
+          push_options: '--force'
+          skip_dirty_check: true    
+          create_branch: true
