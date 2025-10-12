@@ -1,7 +1,7 @@
 /**
  * genpac 3.0.1 https://github.com/JinnLynn/genpac
- * Generated: 2025-10-05 01:55:19
- * GFWList Last-Modified: 2025-10-04 13:07:36
+ * Generated: 2025-10-12 01:51:11
+ * GFWList Last-Modified: 2025-10-11 13:12:35
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
 
@@ -1890,6 +1890,8 @@ var rules = [
             "freedomsherald.org",
             "freeforums.org",
             "freegao.com",
+            "freegpt.es",
+            "freegpt.tech",
             "freehongkong.org",
             "freeilhamtohti.org",
             "freekazakhs.org",
@@ -4570,6 +4572,7 @@ var rules = [
             "solarsystem.nasa.gov",
             "solidaritetibet.org",
             "solidfiles.com",
+            "solscan.io",
             "solv.finance",
             "somee.com",
             "songjianjun.com",
@@ -5412,6 +5415,7 @@ var rules = [
             "vilanet.me",
             "vilavpn.com",
             "vimeo.com",
+            "vimeocdn.com",
             "vimperator.org",
             "vincnd.com",
             "vine.co",
