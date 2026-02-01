@@ -1,7 +1,7 @@
 /**
  * genpac 3.0.1 https://github.com/JinnLynn/genpac
- * Generated: 2026-01-25 02:24:58
- * GFWList Last-Modified: 2026-01-20 12:11:50
+ * Generated: 2026-02-01 02:53:30
+ * GFWList Last-Modified: 2026-02-01 02:37:13
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
 
@@ -571,6 +571,7 @@ var rules = [
             "babylonbee.com",
             "babynet.com.hk",
             "backchina.com",
+            "backend-v2.crixet.com",
             "backpackers.com.tw",
             "backtotiananmen.com",
             "bad.news",
@@ -607,6 +608,7 @@ var rules = [
             "bbc.co.uk",
             "bbc.com",
             "bbc.in",
+            "bbc.pdn.tritondigital.com",
             "bbcchinese.com",
             "bbchat.tv",
             "bbci.co.uk",
@@ -1356,6 +1358,7 @@ var rules = [
             "dbgjd.com",
             "dcard.tw",
             "dcmilitary.com",
+            "dcs-spotify.megaphone.fm",
             "ddc.com.tw",
             "ddex.io",
             "ddns.info",
@@ -1926,6 +1929,7 @@ var rules = [
             "freess.org",
             "freessh.us",
             "freetcp.com",
+            "freeterabox.com",
             "freetibet.net",
             "freetibet.org",
             "freetibetanheroes.org",
@@ -2492,6 +2496,7 @@ var rules = [
             "helloandroid.com",
             "helloqueer.com",
             "hellouk.org",
+            "help.byspotify.com",
             "helpeachpeople.com",
             "helpster.de",
             "helpzhuling.org",
@@ -4542,6 +4547,7 @@ var rules = [
             "silkbook.com",
             "silvergatebank.com",
             "simbolostwitter.com",
+            "simianx.ai",
             "simplecd.me",
             "simplecd.org",
             "simpleproductivityblog.com",
@@ -4830,6 +4836,7 @@ var rules = [
             "tafm.org",
             "tagwalk.com",
             "tahr.org.tw",
+            "tails.net",
             "taipei.gov.tw",
             "taipeisociety.org",
             "taipeitimes.com",
@@ -5946,6 +5953,7 @@ var rules = [
             "yesasia.com.hk",
             "yespornplease.com",
             "yeyeclub.com",
+            "yfsp.tv",
             "ygto.com",
             "yhcw.net",
             "yibada.com",
